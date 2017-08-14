@@ -41,6 +41,18 @@ myApp.service('DatabaseService', function ($q, $http) {
                 
             });
 
+        },
+
+        getProductById: function (id) {
+            var db = new PouchDB('database');
+
+            return $q(function (resolve, reject) {
+                db.get(id).then(function(doc){
+                    resolve(doc)
+                },function(err){
+                    reject(err)
+                })
+            });
         }
     };
 

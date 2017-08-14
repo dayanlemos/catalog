@@ -1,12 +1,12 @@
 'use strict';
 
 var serverUrl = location.origin;
-var imageServerUrl = 'http://marketing2.webshop.aphixsoftware.com/'
+var imageServerUrl = 'http://marketing2.webshop.aphixsoftware.com/';
 
 
 
 
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router','ngSanitize']);
 
 myApp.config(function($stateProvider) {
 
@@ -20,7 +20,7 @@ myApp.config(function($stateProvider) {
 
         .state({
             name: 'product-description',
-            url: '/product-description',
+            url: '/product-list/{productId}',
             templateUrl: 'views/product-description.html',
             controller: 'ProductDescriptionCtrl'
         })

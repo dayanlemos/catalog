@@ -1,1 +1,14 @@
-<h1>{{viewName}}</h1>
+<h1>{{product.value}}</h1>
+<h3>SKU: {{productId}}</h3>
+
+<div class="row">
+
+    <div class="col-sm-3">
+        <img ng-src="https://fakeimg.pl/300/" class="img-thumbnail">
+    </div>
+
+    <div class="col-sm-9">
+        <div ng-bind-html="product.text"></div>
+    </div>
+
+</div>

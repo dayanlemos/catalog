@@ -11,6 +11,7 @@
     "bootstrap": "^3.3.7",
     "angular-ui-router": "^1.0.6",
     "jquery": "^3.2.1",
-    "pouchdb": "^6.3.4"
+    "pouchdb": "^6.3.4",
+    "angular-sanitize": "^1.6.5"
   }
 }
