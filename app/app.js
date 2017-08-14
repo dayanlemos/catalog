@@ -1,14 +1,36 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+var serverUrl = location.origin;
+var imageServerUrl = 'http://marketing2.webshop.aphixsoftware.com/'
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+
+
+
+var myApp = angular.module('myApp', ['ui.router']);
+
+myApp.config(function($stateProvider) {
+
+    $stateProvider
+        .state({
+            name: 'product-list',
+            url: '/product-list',
+            templateUrl: 'views/product-list.html',
+            controller: 'ProductListCtrl'
+        })
+
+        .state({
+            name: 'product-description',
+            url: '/product-description',
+            templateUrl: 'views/product-description.html',
+            controller: 'ProductDescriptionCtrl'
+        })
+
+        .state({
+            name: 'sync',
+            url: '/sync',
+            templateUrl: 'views/sync.html',
+            controller: 'SyncCtrl'
+        })
+    ;
+
+});
